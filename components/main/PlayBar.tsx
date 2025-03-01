@@ -45,7 +45,7 @@ const PlayBar = () => {
       </div>
 
       <div>
-        <TimeStampBar isPlayed={true} duration='2:45'/>
+        <TimeStampBar />
       </div>
     </div>
   )
