@@ -4,7 +4,7 @@ import React, { useState, useRef } from 'react';
 
 import CategoryElement from './CategoryElement';
 
-import { FaArrowRight, FaArrowLeft } from "react-icons/fa6";
+import { MoveLeft, MoveRight } from 'lucide-react';
 
 interface subCategory {
     id: number,
@@ -64,11 +64,11 @@ const Carousel: React.FC<CarouselProps> = ({
 
         <div className='flex gap-5 pr-5'>
             <button onClick={handlePrev}>
-                <FaArrowLeft />
+                <MoveLeft />
             </button>
 
             <button  onClick={handleNext}>
-                <FaArrowRight/>
+                <MoveRight/>
             </button>
         </div>
       </div>

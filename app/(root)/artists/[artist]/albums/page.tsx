@@ -5,11 +5,9 @@ import Image from 'next/image'
 
 import { okiAlbums } from '@/hardcoded/songs'
 
-import { okiEra47Songs } from "@/hardcoded/songs"
+import { era47songs } from "@/hardcoded/songs"
 
-import { FaPause } from "react-icons/fa6";
-import { IoIosArrowDown } from "react-icons/io";
-import { IoIosArrowForward } from "react-icons/io";
+import { Pause, ArrowDown, ArrowRight} from "lucide-react"
 
 import SongElement from '@/components/smaller/SongElement'
 import PlayButton from '@/components/buttons/PlayButton'
@@ -101,9 +99,9 @@ const page = () => {
                   </div>
 
                   {displayAlbumDetails ? (
-                    <IoIosArrowDown size={20}/>
+                    <ArrowDown />
                   ) : (
-                    <IoIosArrowForward size={20}/>
+                    <ArrowRight />
                   )}
                 </div>
             </button>
@@ -123,7 +121,7 @@ const page = () => {
                         hover:scale-110
                         transition
                         '>
-                            <FaPause size={24} className='text-black absolute top-3 left-[12px]'/>
+                            <Pause className='text-black absolute top-3 left-[12px]'/>
                     </button>
               ) : (
                 
@@ -132,11 +130,11 @@ const page = () => {
             </div>
                 
             <div className='flex flex-col gap-2'>
-                {displayAlbumDetails ? okiEra47Songs.map((song,index) => (
+                {displayAlbumDetails ? era47songs.songsList.map((song,index) => (
                   <SongElement 
                   key={index} 
                   title={song.songName}
-                  duration={song.songLength}
+                  duration={song.duration}
                   id={song.id}
                   authors={song.artists}
                   cover={null}

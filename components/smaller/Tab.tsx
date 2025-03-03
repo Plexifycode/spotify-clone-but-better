@@ -4,14 +4,8 @@ import { useState } from 'react';
 
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { IconType } from 'react-icons';
 
-import { FaCompactDisc } from "react-icons/fa6";
-import { FiUser } from "react-icons/fi";
-import { IoMdMusicalNote } from "react-icons/io";
-
-
-import { MdOutlineClose } from "react-icons/md";
+import { Disc3, User, Music2, X } from 'lucide-react';
 
 interface TabProps {
     label: string,
@@ -48,7 +42,7 @@ const Tab: React.FC<TabProps> = ({
           font-semibold
         `}>
         <Link href={href} className='flex gap-3 items-center w-full'>
-          {icon === "artist" ? <FiUser size={22}/> : icon === "album" ? <FaCompactDisc size={22}/> : icon === "song" ? <IoMdMusicalNote size={22}/> : "no icon"}
+          {icon === "artist" ? <User/> : icon === "album" ? <Disc3 /> : icon === "song" ? <Music2 /> : "no icon"}
   
           <div className={`text-sm `}>{label}</div>
         </Link>
@@ -56,7 +50,7 @@ const Tab: React.FC<TabProps> = ({
         <button 
             onClick={() => { setIsVisible(false); console.log(isVisible); }} 
             className='p-1 hidden group-hover:block absolute top-2 right-2'>
-            <MdOutlineClose size={20}/>
+            <X />
         </button> 
       </div>
     )

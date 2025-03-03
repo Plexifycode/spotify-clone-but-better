@@ -6,8 +6,8 @@ import ArtistPageLinks from "@/components/smaller/ArtistPageLinks";
 
 import PlayButton from "@/components/buttons/PlayButton";
 
-import { MdOutlineLibraryAdd } from "react-icons/md";
-import { HiOutlineQueueList } from "react-icons/hi2";
+import { SquarePlus, ListMusic } from "lucide-react"
+
 
 import Image from 'next/image';
 
@@ -52,29 +52,32 @@ export default async function NestedLayout  ({ children, params }: {children:  R
         <>
             <div className='bg-[url("/artists/oki/okibg.jpg")] w-full h-[26rem] bg-center bg-cover rounded-t-xl bg-no-repeat z-10 relative '>
             <div className='w-full h-[26rem] absolute top-0 left-0 bg-gradient-to-b from-transparent to-black opacity-90 '></div>
-            <div className='pt-[14rem] relative z-20 px-10 py-4'>
-                <h1 className='text-white font-[900] text-[4rem]  font-roboto tracking-wide '>{artist.name}</h1>
+            <div className='pt-[12rem] relative z-20 px-10 py-4 '>
+                <h1 className='text-white font-[900] text-[5rem]  tracking-wide '>{artist.name}</h1>
 
                 <div className='mt-4'>
                     <div className='flex justify-between items-center'>
                         <span className='text-white'>2,322,003 monthly listeners</span>
 
-                        <div className='flex items-center gap-7'>
+                        <div className='flex items-center gap-5'>
+                            <PlayButton />
+
                             {isFollowed ? (
-                                <button className='bg-[#565656] text-white opacity-90 tracking-widest font-[500] rounded-full px-6 text-sm  py-3 hover:cursor-pointer'>Followed</button>
+                                <button className='bg-[#27D16D] text-white tracking-widest font-[500] rounded-full px-6 text-sm  py-3 hover:cursor-pointer ml-2'>Followed</button>
                             ) : (
-                                <button className='bg-[#27D16D] text-white tracking-widest font-[500] rounded-full px-6 text-sm  py-3 hover:cursor-pointer'>Follow</button>
+                                
+                                <button className='bg-[#565656] text-white opacity-90 tracking-widest h-12 font-[500] rounded-full px-6 text-sm  py-3 hover:cursor-pointer ml-2'>Follow</button>
                             )}
 
-                            <button className="text-white">
-                                <MdOutlineLibraryAdd size={30}/>
+                            <button className="text-white p-3 rounded-full">
+                                <SquarePlus size={28}/>
                             </button>
 
-                            <button className="text-white">
-                                <HiOutlineQueueList size={30}/>
+                            <button className="text-white p-3 rounded-full">
+                                <ListMusic size={28}/>
                             </button>
 
-                            <button className='flex gap-1'>
+                            <button className='flex gap-1 p-3 py-5 rounded-full '>
                                 <div className='w-1 h-1 bg-textPrimary rounded-full bg-white'></div>
                                 <div className='w-1 h-1 bg-textPrimary rounded-full bg-white'></div>
                                 <div className='w-1 h-1 bg-textPrimary rounded-full bg-white'></div>

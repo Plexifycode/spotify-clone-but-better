@@ -6,18 +6,9 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 
-import { GoHome } from "react-icons/go";
-import { IoSearch } from "react-icons/io5";
-
-// customlinks icons
-import { BiBell } from "react-icons/bi";
-import { IoSettingsOutline } from "react-icons/io5";
-import { GrGroup } from "react-icons/gr";
-import { LuLockKeyholeOpen } from "react-icons/lu";
+import { BellRing, House, Search, Settings, LockKeyholeOpen, Users } from 'lucide-react';
 
 import  Tab from "@/components/smaller/Tab"
-
-import { FiUser } from "react-icons/fi";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -85,13 +76,13 @@ const Navbar = () => {
       
       <div className='flex gap-2 items-center '>
         <Link href={"/"} className={`${pathname === "/" ? "bg-[#181414] rounded-xl" : "bg-[#060606]"} flex items-center gap-3 w-60 px-4 py-3`}>
-          <GoHome size={28} className={`${pathname === "/" ? "text-white" : "text-textPrimary"}`}/>
+          <House className={`${pathname === "/" ? "text-white" : "text-textPrimary"}`}/>
 
           <p className={`${pathname === "/" ? "text-white" : "text-textPrimary"} text-sm pt-1 font-semibold`}>Home</p>
         </Link>
 
         <label htmlFor="search" className={`${pathname === "/search" ? "bg-[#181414] rounded-xl" : "bg-[#060606]"} flex items-center gap-3 w-60 px-4 py-3`} onClick={ChangeRouteToSearch}>
-          <IoSearch size={25}  className={`${pathname === "/search" ? "text-white" : "text-textPrimary"}`}/>
+          <Search  className={`${pathname === "/search" ? "text-white" : "text-textPrimary"}`}/>
           
           <input 
             type="text" 
@@ -134,19 +125,19 @@ const Navbar = () => {
 
       <div className='flex gap-8 items-center pr-5'>
           <button>
-            <BiBell size={26}/>
+            <BellRing/>
           </button>
 
           <button>
-            <LuLockKeyholeOpen size={26}/>
+            <LockKeyholeOpen />
           </button>
 
           <button>
-            <GrGroup size={26}/>
+            <Users />
           </button>
 
           <Link href={"/account/settings"} onClick={() => {createNewTab("settings")}}>
-            <IoSettingsOutline size={26}/>
+            <Settings/>
           </Link>
 
           <Link href={"/account/profile"} onClick={() => {createNewTab("profile")}}>

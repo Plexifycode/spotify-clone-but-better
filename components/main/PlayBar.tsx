@@ -4,10 +4,7 @@ import React from 'react'
 import PlayButton from '@/components/buttons/PlayButton'
 import TimeStampBar from "@/components/main/TimeStampBar";
 
-import { RiSkipForwardFill } from "react-icons/ri";
-import { RiSkipBackFill } from "react-icons/ri";
-import { ImLoop } from "react-icons/im";
-import { PiShuffleFill } from "react-icons/pi";
+import { Shuffle, Repeat, SkipForward, SkipBack} from 'lucide-react';
 
 interface PlayBarProps {
     currentlyPlayed: object,
@@ -28,19 +25,19 @@ const PlayBar = () => {
         <PlayButton onClick={() => {}} />
 
         <button>
-            <RiSkipBackFill  size={22}/>
+            <SkipBack />
         </button>
 
         <button>
-            <RiSkipForwardFill size={22}/>
+          <SkipForward />
         </button>
 
         <button>
-            <PiShuffleFill size={25}/>
+          <Shuffle />
         </button>
 
         <button>
-            <ImLoop size={18}/>
+          <Repeat />
         </button>
       </div>
 

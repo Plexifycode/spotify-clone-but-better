@@ -4,10 +4,7 @@ import React, { useState } from 'react';
 
 import Image from 'next/image';
 
-import { FaPlay } from "react-icons/fa";
-import { FaRegHeart } from "react-icons/fa";
-import { FaHeart } from "react-icons/fa";
-import { FaPause } from "react-icons/fa";
+import { Play, Heart, Pause } from 'lucide-react';
 
 
 interface SongElementProps {
@@ -28,14 +25,14 @@ const SongElement: React.FC<SongElementProps> = ({
     <div className='hover:cursor-pointer flex items-center gap-2 px-6 hover:bg-[#222] bg-opacity-0 rounded-md py-3 transition' onDoubleClick={() => {setIsPlayed(!isPlayed)}}>
         {isPlayed ? (
             <button className={`${cover ? "w-[2rem]" : "w-[3rem]"} pt-1  px-3  transition`}>
-                <FaPause className='text-emerald-500'  size={20} onClick={() => {setIsPlayed(!isPlayed)}}/>
+                <Pause className='text-emerald-500' onClick={() => {setIsPlayed(!isPlayed)}}/>
             </button>
         ) : (
             <>
                 <p className={`${cover ? "w-[2.5rem]" : "w-[4rem]"} group-hover:hidden px-4 pt-1 pr-3 `}>{id}</p>
                     
                 <button className={`${cover ? "w-[2.5rem]" : "w-[4rem]"} pt-1 hidden group-hover:block px-3`}>
-                    <FaPlay className='text-emerald-500'  size={20} onClick={() => {setIsPlayed(!isPlayed)}}/>
+                    <Play className='text-emerald-500'  onClick={() => {setIsPlayed(!isPlayed)}}/>
                 </button>
             </>
         )}
@@ -61,11 +58,11 @@ const SongElement: React.FC<SongElementProps> = ({
 
       {isLiked ? (
             <button className='text-emerald-500 hover:scale-[1.15] transition p-2' onClick={() => {setIsLiked(!isLiked)}}>
-                <FaHeart size={22} /> 
+                <Heart  /> 
             </button> 
         ) : (
-            <button className='p-2 hover:scale-[1.15] transition' onClick={() => {setIsLiked(!isLiked)}}>
-                <FaRegHeart size={22} className=''/> 
+            <button className='text-emerald-500 p-2 hover:scale-[1.15] transition' onClick={() => {setIsLiked(!isLiked)}}>
+                <Heart fill='#10b981' className=''/> 
             </button>   
         )}
       
