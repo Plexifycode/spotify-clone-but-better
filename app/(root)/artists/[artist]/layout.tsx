@@ -1,17 +1,11 @@
-
-
 import React from "react";
+
 
 import ArtistPageLinks from "@/components/smaller/ArtistPageLinks";
 
 import PlayButton from "@/components/buttons/PlayButton";
 
 import { SquarePlus, ListMusic } from "lucide-react"
-
-
-import Image from 'next/image';
-
-import OkiBg from "./../../../public/artists/oki/okibg.jpg";
 
 import { artists } from "@/hardcoded/artists";
 
@@ -50,7 +44,9 @@ export default async function NestedLayout  ({ children, params }: {children:  R
 
     return (
         <>
-            <div className='bg-[url("/artists/oki/okibg.jpg")] w-full h-[26rem] bg-center bg-cover rounded-t-xl bg-no-repeat z-10 relative '>
+            <div style={{
+                backgroundImage: `url(${artist.banner})`
+            }} className='w-full h-[26rem] bg-center bg-cover rounded-t-xl bg-no-repeat z-10 relative'>
             <div className='w-full h-[26rem] absolute top-0 left-0 bg-gradient-to-b from-transparent to-black opacity-90 '></div>
             <div className='pt-[12rem] relative z-20 px-10 py-4 '>
                 <h1 className='text-white font-[900] text-[5rem]  tracking-wide '>{artist.name}</h1>

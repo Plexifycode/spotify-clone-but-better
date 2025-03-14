@@ -8,11 +8,8 @@ import SongElement from './smaller/SongElement';
 
 import { era47songs } from '@/hardcoded/songs';
 import era47 from "@/public/artists/oki/albums-covers/era47.jpg"
-import { PiShuffleFill } from "react-icons/pi";
-import { IoMdAddCircleOutline } from "react-icons/io";
-import { MdOutlineDownloadForOffline } from "react-icons/md"
-import { RxUpload } from "react-icons/rx";
-import { IoSearch } from "react-icons/io5";
+
+import { Shuffle, Search, Upload, Download } from 'lucide-react';
 
 import PlayButton from './buttons/PlayButton';
 
@@ -66,18 +63,18 @@ const AlbumPage: React.FC<AlbumPageProps> = ({
                     <div className='flex items-center gap-10'>
                         <PlayButton/>
                         
-                        <PiShuffleFill size={35} className='text-textPrimary'/>
+                        <Shuffle size={35} className='text-textPrimary'/>
 
-                        <IoMdAddCircleOutline size={35}/>
+                        {/* plus icon */}
 
                         <p>BRAK</p>
 
-                        <MdOutlineDownloadForOffline size={35}/>
+                        <Download size={35}/>
 
-                        <RxUpload size={28}/>
+                        <Upload size={28}/>
                     </div>
 
-                    <IoSearch size={25} />
+                    <Search size={25} />
                 </div>
 
                 <div className='flex flex-col gap-1'>

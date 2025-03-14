@@ -50,6 +50,7 @@ body {
   border-radius: 50%;
   cursor: pointer;
   display: none;
+  
 }
 .inputRange::-moz-range-thumb:hover {
   display: block;

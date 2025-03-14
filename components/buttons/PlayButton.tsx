@@ -1,22 +1,17 @@
 "use client"
 
-import React, { useState } from 'react'
+import React from 'react'
+
+import { useMusic } from '@/lib/PlayStateContext'
 
 import { Play, Pause }  from 'lucide-react'
 
-
-interface buttonProps {
-    onClick: void,
-    clickState: boolean
-}
-
-const PlayButton: React.FC<buttonProps> = ({
-    onClick, clickState
-}) => {
-  const [isClicked, setIsClicked] = useState(clickState)
+const PlayButton = () => {
+  const { isPlaying, setIsPlaying, currentSong } = useMusic()
+  const id = 1;
   return (
     <button
-        onClick={() => {onClick; setIsClicked(!isClicked)}}
+        onClick={() => {setIsPlaying(!isPlaying)}}
         className='
         bg-[#1ed760]
         hover:bg-[#3ad16f]
@@ -32,7 +27,7 @@ const PlayButton: React.FC<buttonProps> = ({
         items-center
         '>
             {
-              isClicked ? (
+              isPlaying && currentSong?.id === id ? (
                 <Pause className='text-black'  size={20} fill='#000'/>
               ) : (
                 <Play className='text-black' size={18} fill='#000'/>

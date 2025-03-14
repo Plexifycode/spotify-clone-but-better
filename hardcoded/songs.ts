@@ -148,12 +148,10 @@ export const era47songs = {
         
             {
                 id: 19,
-        
                 songName: "DOM",
                 artists: ["Oki", "Young Igi", "SHDØW"],
                 streams: "2,057,737",
                 duration: "3:30",
-        
             },
         
         
